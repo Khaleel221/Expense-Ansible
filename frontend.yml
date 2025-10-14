@@ -1,5 +1,5 @@
 - name: frontend playbook
-  host: all
+  hosts: all
   become: true
   tasks:
     - name: install dnf package
