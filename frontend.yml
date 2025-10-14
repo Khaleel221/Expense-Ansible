@@ -1,4 +1,4 @@
-- name: frontend playbook
+- name: frontend playbook execution
   hosts: all
   become: true
   tasks:
