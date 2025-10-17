@@ -48,6 +48,23 @@
 
     - name: install mysql client
       ansible.built.dnf:
-            name: mysql
+            name:
+             - mysql
+             - python-pymsql
             state: present
 
+    - name: load schema
+      community.mysql_mysql_db:
+        state: import
+        name: all
+        target: /app/schema/backend.sql
+        login_user: root
+        login_password: ExpenseApp@1
+        login_host: 172.31.21.92
+
+    - name: start backend service
+      ansibel.builtin.systemd.service:
+        name: backend
+        state: present
+        enabled: true
+        daemon_reload: true
