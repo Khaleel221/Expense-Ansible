@@ -18,7 +18,7 @@
 
     - name: add expense user
       ansible.builtin.user:
-      name: expense
+       name: expense
 
 
     - name: copy service file
