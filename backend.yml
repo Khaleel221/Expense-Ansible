@@ -28,12 +28,12 @@
 
     - name: delete exiting application directory
       ansible.builtin.file:
-        name: /app
+        path: /app
         state: absent
 
     - name: delete exiting application directory
       ansible.builtin.file:
-        name: /app
+        path: /app
         state: present
 
     - name: download and extract file
