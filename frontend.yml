@@ -27,8 +27,7 @@
 
     - name: download and extract frontend code
       ansible.builtin.unarchive:
-        src: /tmp/frontend.zip
-        URL: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
+        src:  https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
         dest: /usr/share/nginx/html
         remote_src: yes
 
