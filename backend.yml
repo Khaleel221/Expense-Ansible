@@ -25,3 +25,29 @@
       ansible.builtin.copy:
         src: backend.service
         dest: /etc/systemd/system/backend.service
+
+    - name: delete exiting application directory
+      ansible.builtin.file:
+        name: /app
+        state: absent
+
+    - name: delete exiting application directory
+      ansible.builtin.file:
+        name: /app
+        state: present
+
+    - name: download and extract file
+      ansible.builtin.unarchive:
+          src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
+          dest: /app
+          remote_src: true
+
+    - name: install package based on package.json
+      community.general.npm:
+          path: /app
+
+    - name: install mysql client
+      ansible.built.dnf:
+            name: mysql
+            state: present
+
