@@ -31,10 +31,10 @@
         path: /app
         state: absent
 
-    - name: delete exiting application directory
+    - name: create exiting application directory
       ansible.builtin.file:
         path: /app
-        state: present
+        state: directory
 
     - name: download and extract file
       ansible.builtin.unarchive:
