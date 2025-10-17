@@ -1,55 +1,6 @@
-- name: backend playbook execution
+- name: backend playbook
   hosts: all
   become: true
   tasks:
     - name: set-prompt
-      ansible.builtin.shell: set-prompt backend
-
-    - name: disable nodejs default version
-      ansible.built.shell: dnf module disable nodejs -y
-
-    - name: enable nodejs default version
-      ansible.built.shell: dnf module enable nodejs -y
-
-    - name: install dnf package
-      ansible.builtin.dnf:
-        name: nodejs
-        state: present
-
-    - name: add expense user
-      ansible.builtin.dnf:
-        name: Expense
-
-    - name: copy backend service file
-      ansible.builtin.copy:
-        src: backend.service
-        dest: /etc/systemd/system/backend.service
-
-    - name: create directory
-      ansible.builtin.file:
-        path: /app
-        state: present
-
-    - name: download and extract a front file
-      ansible.builtin.unarchive:
-        src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
-        dest: /app
-        remote_src: yes
-
-    - name: Install node.js package.
-      community.general.npm:
-        path: /app
-
-    - name: install mysql client
-      ansible.builtin.dnf:
-        name: mysql
-        state: present
-
-    - name: load schema
-      community.mysql.mysql_db:
-        state: import
-        name: all
-        target: /app/schema/backend.sql
-        login_user: root
-        login_password: -pExpenseApp@1
-        login_host: 172.31.27.31
+      ansible.builtin.sheel: set-prompt backend
