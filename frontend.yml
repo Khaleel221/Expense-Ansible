@@ -3,7 +3,7 @@
   become: true
   tasks:
     - name: set-prompt
-      ansible.builtin.sheel: set-prompt frontend
+      ansible.builtin.shell: set-prompt frontend
 
     - name: installing nginx package
       ansible.builtin.dnf:
