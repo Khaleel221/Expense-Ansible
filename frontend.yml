@@ -16,11 +16,11 @@
         dest: /etc/nginx/default.d/expense.conf
 
     - name: remove directory
-      ansible.builtin.copy:
+      ansible.builtin.file:
         path: /usr/share/nginx/html
         state: absent
 
     - name: create directory
-      ansible.builtin.copy:
+      ansible.builtin.file:
         path: /usr/share/nginx/html
         state: present
