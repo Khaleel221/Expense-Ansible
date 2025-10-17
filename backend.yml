@@ -47,7 +47,7 @@
           path: /app
 
     - name: install mysql client
-      ansible.built.dnf:
+      ansible.builtin.dnf:
             name:
              - mysql
              - python-pymsql
