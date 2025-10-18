@@ -61,7 +61,7 @@
         target: /app/schema/backend.sql
         login_user: root
         login_password: ExpenseApp@1
-        login_host: 172.31.27.43
+        login_host: mysql-dev.khaleel221.shop
 
     - name: start backend service
       ansible.builtin.systemd:
