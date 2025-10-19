@@ -18,7 +18,7 @@
 
 
 - name: copy service file
-  ansible.builtin.copy:
+  ansible.builtin.templates:
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
@@ -57,7 +57,7 @@
     target: /app/schema/backend.sql
     login_user: root
     login_password: ExpenseApp@1
-    login_host: mysql-dev.khaleel221.shop
+    login_host: mysql-{{ env }}.khaleel221.shop
 
 - name: start backend service
   ansible.builtin.systemd:

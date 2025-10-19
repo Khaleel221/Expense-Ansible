@@ -3,7 +3,7 @@ Description = Backend Service
 
 [Service]
 User=expense
-Environment=DB_HOST=mysql-dev.khaleel221.shop
+Environment=DB_HOST=mysql-{{ env }}.khaleel221.shop
 ExecStart=/bin/node /app/index.js
 SyslogIdentifier=backend
 
