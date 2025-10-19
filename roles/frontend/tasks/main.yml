@@ -1,5 +1,3 @@
-- name: set-prompt
-  ansible.builtin.shell: set-prompt frontend
 
 - name: installing nginx package
   ansible.builtin.dnf:
