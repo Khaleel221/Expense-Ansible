@@ -1,4 +1,4 @@
-if [ "$pipeline" == "true" ]; then
+if [ -z "$component" ]; then
   exit
 fi
 ##
